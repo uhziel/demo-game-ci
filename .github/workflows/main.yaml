@@ -41,6 +41,7 @@ jobs:
           path: ${{ steps.tests.outputs.artifactsPath }}
 
   buildForAllSupportedPlatforms:
+    needs: testAllModes
     name: Build for ${{ matrix.targetPlatform }}
     runs-on: ubuntu-latest
     strategy:
